@@ -6,3 +6,5 @@ didn't worry about a lot of things and cover a lot of Python features. After
 making it, I was like "heck yeah, I wanna try this to my own abilities" and made
 this. This is about a good maybe, 12 hours spread over two days. Did I use a ton
 of Python features? No, but I made a nice game.
+
+To add: AI, maybe slower ball in opening
