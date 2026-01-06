@@ -193,7 +193,6 @@ def collide_goals(p1: Player, p2: Player, ball: Ball):
         game.timer = 0.0
         return
 
-
 def collide_plr(plr: Player, ball: Ball):
     paddle_middle_point = plr.y + (PADDLE_HEIGHT / 2)
     ball_middle_point = ball.y + (BALL_RADIUS / 2)
@@ -267,6 +266,7 @@ def update(game: Game, p1: Player, p2: Player, ball: Ball):
             if game.timer > OPENING_PLAY:
                 ball.in_play = True
 
+# Cannot handle multiple characters of white space or special characters
 def get_total_text_width(font: pygame.freetype.Font, text: str) -> int:
     metrics = font.get_metrics(text)
 
