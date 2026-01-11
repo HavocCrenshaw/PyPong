@@ -10,7 +10,6 @@
 from enum import Enum
 import os
 import random
-import sys
 
 import pygame
 import pygame.freetype
@@ -95,15 +94,15 @@ class Ball(object):
 
         left = random.randint(0, 1)
         if left:
-            self.vel_x = -BALL_SPEED
+            self.vel_x = -(BALL_SPEED * 3/4)
         else:
-            self.vel_x = BALL_SPEED
+            self.vel_x = (BALL_SPEED * 3/4)
 
         up = random.randint(0, 1)
         if up:
-            self.vel_y = -(BALL_SPEED / 2)
+            self.vel_y = -(BALL_SPEED * 1/4)
         else:
-            self.vel_y = BALL_SPEED / 2 
+            self.vel_y = (BALL_SPEED * 1/4)
 
         self.in_play = False
 
@@ -201,7 +200,12 @@ def collide_plr(plr: Player, ball: Ball):
     # below the ball instead of getting a positive integer, you get
     # a negative integer (upwards being -y)
     difference = ball_middle_point - paddle_middle_point
-    ball.vel_x = -ball.vel_x
+
+    # Hack because if statements are slow, instead of multiple, just one
+    desired_speed_increase = BALL_SPEED - abs(ball.vel_x)
+    if -ball.vel_x < 0:
+        desired_speed_increase = -desired_speed_increase
+    ball.vel_x = -ball.vel_x + desired_speed_increase
     game = Game()
 
     # Push the ball a little bit away from the paddle, prevents the ball from
@@ -452,7 +456,6 @@ def main() -> int:
 
         # Convert ms (return of `.tick()`) to seconds (16ms vs 0.016s)
         game.dt = game.clock.tick() / 1000
-    return 0
 
 if __name__ == '__main__':
-    sys.exit(main())
+    main()

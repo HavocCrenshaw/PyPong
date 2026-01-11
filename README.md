@@ -1,10 +1,20 @@
 # PyPong
-Learning Python project. I taught somebody how to code with Python recently, and
-the project we made was this. I was more so focusing on fundementals of
-programming, not actually using Python to some of it's full capability, so we
-didn't worry about a lot of things and cover a lot of Python features. After
-making it, I was like "heck yeah, I wanna try this to my own abilities" and made
-this. This is about a good maybe, 12 hours spread over two days. Did I use a ton
-of Python features? No, but I made a nice game.
+A implementation of the classic Pong in Python! Inspired by a teaching project
+I did where I had taught somebody how to code a Pong game with Python. I decided
+to go more "all out" with my own version.
 
-To add: AI, maybe slower ball in opening
+![PyPong in Action](./pypong-in-action.png)
+
+# Requirements & Running
+To run, you should have Python and PyGame installed. Python 3.13.5 and Pygame
+2.6.1 are the canonical versions.
+
+https://python.org/<br>
+https://pygame.org/
+
+Then, just simply:<br>
+`$ python3 pypong.py`
+
+# TODO
+Add an AI opponent!
+UX flair & polish.
